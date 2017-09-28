@@ -15,8 +15,97 @@
       <div id="content">
         <h1 id="cs349d-cloud-computing-technology">CS349D Project Ideas</h1>
 
+
+    <p>The following is a list of potential topics and ideas for your
+    CS349d project. These are starting points that will require
+    further development. Please reach out to the instructors for futher
+    information.</p> 
+
+  <h3>Serverless computing</h3>
+  <p>This is a great time to explore opportunities in serverless
+  computing. The following ideas explore new directions in this area
+	with some building on top of recent research at Stanford.</p>
+
+	<ul style="margin-left: 20px;">
+	  <li> Applications for serverless computing: We recently
+	  developed an abstraction that can potentially support a wide
+	  range of computation on a serverless platform. The goal of
+	  this project is to port important apps on this abstraction
+	  and draw insights about its efficacy of the abstraction and
+	  the design of the serverless infrastructure. 
+	  Applications of interest include MapReduce,
+	  Spark, and visual analytics workloads.</li>
+	  <li> A portable serverless abstraction: We recently
+	  developed an abstraction that can potentially support a wide
+	  range of computation on a serverless platform. Its original
+	  implementation is for the Amazon Lambda platform. The goal
+	  of this project is to port it to open source serverless
+	  platforms like OpenWhisk. In addition to improving
+	  portability, the new system can be the basis of an full,
+	  open source stack for serverless computing. </li>
+	  <li>Ephemeral storage: Serverless computing can use existing
+	  storage and database services for long term data (e.g.,
+	  input and output). However, there is also a need for a new
+	  type of storage system for temporary data, one that matches
+	  the scaling, speed, and cost properties of serverless
+	  computation. This storage system can potential use slack
+	  DRAM or Flash capacity across a datacenter. The goal of this
+	  project is to explore APIs and design options and
+	  implementat a prototype system on an existing cloud
+          services. </li>
+  	  <li>Scheduling and locality optimizations: Current serverless platforms
+	  incur significant overheads for remote access to code and
+	  data. The goal of this project is to design and implement
+	  optimizations that enhance locality (e.g., send a function
+	  to a machine close to the data) or hide latency (e.g.,
+	  prefetch data). </li>
+	  <li>Serveless for high throughput serving systems:
+	  Serverless computing is quite popular with high volume
+	  serving applications. For high volume serving application
+	  (e.g., websearch), people still use traditional server
+	  designs. Can we design a serverless system that can execute
+	  efficiently the same code both at low and high volume
+	  scenarios? </li>
+	  <li>Serverless for accelerators: Does it make sense to
+	  extend the serverless platforms for GPUs, FPGAs, and other
+	  accelerators? If yes, how does the system look like? </li>
+	  <li>The economics of serverless: How should one charge for server less? Alternatively, given the economics and the usage characteristics, how should one set the thresholds for constraints (e.g., up to 500 MB disk)? </li>
+	</ul>
+
+	<h3>Cloud infrastructure</h3>
+
+	<ul style="margin-left: 20px;">
+
+	  <li> ML for cloud management: Machine learning can be quite
+	useful for cluster management as well. For example, we can
+	use ML to find good signals for better job placement, e.g.,
+	network interference or other performance
+	measurements, and build a system that automates cluster
+	management tasks based on these signals.  </li>
+
+	<li> Operating system for the cloud: can we build an operating
+	system that supports thousands of Lambda functions or
+	thousands of threads per machine?</li> 
+	
+	<li> Rethinking containers and migration: Many companies develop
+	cloud services on containers. These containers communicate
+	with other services over APIs, in most cases storage or DBs,
+	that are also remote. The typical approach to dealing with SLO
+	violations in this environment is to kill the container and
+	restart it someplace else. Can container migration help get
+	the best of both worlds: the simplicity of containers and the
+	migration flexibility of VMs? Is current migration technology
+	sufficient (CRIU)? Alternatively, can we build on something
+	like KVM to build a container system that supports safe
+	migratable processes, use a userspace networking stack running
+	in the same address space and provide basic filesystem
+	abstractions that target a remote storage system? The Intel
+	Clear Containers project may be a good starting point. </li>
+
+
+	</li>
+	</ul>
       </div>
     </div>
-  
 
 </body></html>
