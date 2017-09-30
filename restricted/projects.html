@@ -104,10 +104,22 @@
 	in the same address space and provide basic filesystem
 	abstractions that target a remote storage system? The Intel
 	Clear Containers project may be a good starting point. </li>
-
-
 	</li>
+	      
 	</ul>
+	    
+	<h3>Machine Learning</h3>
+	<ul style="margin-left: 20px;">
+	<li>Fault tolerant and elastic deep learning: with constructs such as the spot market available in public clouds, the static network topologies in current distributed deep learning frameworks may not be optimal. How can we make these frameworks tolerate elasticity how much do we gain from it?</li>
+	<li>Attacking cloud ML APIs: several papers have shown that for systems that offer ML inference as a service (using a private model from the provider), it’s possible to recover the model after a few requests (e.g., suppose that it was k-dimensional a linear model — you just need k requests). Can you do this for deep learning models?</li>
+	</ul>
+	    
+    	<h3>Programming Models</h3>
+	<ul style="margin-left: 20px;">
+	<li>Can you design a programming model that automatically makes sure a cloud application follows an industry regulation such as HIPAA? Ideally this would look very close to existing programming models (e.g. Lambda or Node.JS) but do this automatically.</li>
+	<li>Laptop extension: imagine that you mostly store data in a Dropbox-like distributed file system on your laptop, so it’s also in the cloud. Could you offload tasks such as software builds, video encoding or image rendering to lambda functions or VMs in the cloud?</li>
+	</ul>
+	    
       </div>
     </div>
 
