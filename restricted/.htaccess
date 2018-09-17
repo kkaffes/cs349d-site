@@ -3,7 +3,7 @@
 # add them to .htstaff instead.
 
 AuthType WebAuth
-AuthGroupFile /afs/.ir/class/archive/cs/cs349d/cs349d.1182/WWW/restricted//.htstaff
+AuthGroupFile /afs/.ir/class/archive/cs/cs349d/cs349d.1192/WWW/restricted//.htstaff
 AuthzGroupFileAuthoritative Off
-require group 1182-cs-349d-staff
+require group 1192-cs-349d-staff
 
