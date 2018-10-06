@@ -21,104 +21,49 @@
     further development. Please reach out to the instructors for futher
     information.</p> 
 
-  <h3>Serverless Computing</h3>
-  <p>This is a great time to explore opportunities in serverless
-  computing. The following ideas explore new directions in this area
-	with some building on top of recent research at Stanford.</p>
+    <h3>Machine Learning</h3>
+    <ul style="margin-left: 20px;">
+        <li>Design an infrastructure for mobile-edge neural network computations. Offload to edge servers or datacenter servers as needed for performance/power or based on data availability. </li>
+        <li>In a cloud ML system as new data arrive, how do we decide when to re-train or incrementally train a ML model? How does the cost vs. benefit relate to the model type? What infrastructure is needed to support this?</li>
+        <li>ML Serving: Design a system to automatically generate fast model serving code from a data science pipeline in libraries like Pandas and SciKit-Learn, using technology such as <a href="https://www.weld.rs/">Weld</a>.</li>
+        <li>ML and Hardware: build a parameter server for distributed ML training that exploits 3D crosspoint memory to increase capacity without introducing performance problems. </li>
+    </ul>
 
+    <h3>Serverless Computing</h3>
 	<ul style="margin-left: 20px;">
-	  <li> Applications for serverless computing: We recently
-	  developed an abstraction that can potentially support a wide
-	  range of computation on a serverless platform. The goal of
-	  this project is to port important apps on this abstraction
-	  and draw insights about its efficacy of the abstraction and
-	  the design of the serverless infrastructure. 
-	  Applications of interest include MapReduce,
-	  Spark, and visual analytics workloads.</li>
-	  <li> A portable serverless abstraction: We recently
-	  developed an abstraction that can potentially support a wide
-	  range of computation on a serverless platform. Its original
-	  implementation is for the Amazon Lambda platform. The goal
-	  of this project is to port it to open source serverless
-	  platforms like OpenWhisk. In addition to improving
-	  portability, the new system can be the basis of an full,
-	  open source stack for serverless computing. </li>
-	  <li>Ephemeral storage: Serverless computing can use existing
-	  storage and database services for long term data (e.g.,
-	  input and output). However, there is also a need for a new
-	  type of storage system for temporary data, one that matches
-	  the scaling, speed, and cost properties of serverless
-	  computation. This storage system can potential use slack
-	  DRAM or Flash capacity across a datacenter. The goal of this
-	  project is to explore APIs and design options and
-	  implementat a prototype system on an existing cloud
-          services. </li>
-  	  <li>Scheduling and locality optimizations: Current serverless platforms
-	  incur significant overheads for remote access to code and
-	  data. The goal of this project is to design and implement
-	  optimizations that enhance locality (e.g., send a function
-	  to a machine close to the data) or hide latency (e.g.,
-	  prefetch data). </li>
-	  <li>Serveless for high throughput serving systems:
-	  Serverless computing is quite popular with low volume
-	  serving applications. For high volume serving application
-	  (e.g., websearch), people still use traditional server
-	  designs. Can we design a serverless system that can execute
-	  efficiently the same code both at low and high volume
-	  scenarios? </li>
-	  <li>Serverless for accelerators: Does it make sense to
-	  extend the serverless platforms for GPUs, FPGAs, and other
-	  accelerators? If yes, how does the system look like? </li>
+	  <li>Serveless for high throughput serving systems: Serverless computing is quite popular with low volume serving applications. For high volume serving application (e.g., websearch), people still use traditional server designs. Can we design a serverless system that can execute efficiently the same code both at low and high volume scenarios? </li>
+	  <li>Serverless for accelerators: Does it make sense to extend the serverless platforms for FPGAs, and other accelerators? If yes, how does the system look like? </li>
+      <li>Build a serverless platform based on slack compute, memory, and storage resources.</li>
 	  <li>The economics of serverless: How should one charge for 
-          server less? Alternatively, given the economics and the usage
+          serverless? Alternatively, given the economics and the usage
           characteristics, how should one set the thresholds for constraints
 	  (e.g., up to 500 MB disk)? </li>
-	  <li>Laptop extension: imagine that you mostly store data in a Dropbox-like distributed file system on your laptop, so it’s also in the cloud. Could you offload tasks such as software builds, video encoding or image rendering to lambda functions or VMs in the cloud?</li>
 	</ul>
 
-	<h3>Cloud Infrastructure</h3>
+	<h3>Cloud Management</h3>
 
 	<ul style="margin-left: 20px;">
 
-	  <li> ML for cloud management: Machine learning can be quite
-	useful for cluster management as well. For example, we can
-	use ML to find good signals for better job placement, e.g.,
-	network interference or other performance
-	measurements, and build a system that automates cluster
-	management tasks based on these signals.  </li>
+	   <li> ML for cloud management: Several researchers are suggesting the use of reinforcement learning (RL) in cloud management. Select on cloud management task (e.g., resource allocation, scheduling, etc) and build RL solutions to it. </li>
 
-	<li> Operating system for the cloud: can we build an operating
-	system that supports thousands of Lambda functions or
-	thousands of threads per machine?</li> 
-	
-	<li> Rethinking containers and migration: Many companies develop
-	cloud services on containers. These containers communicate
-	with other services over APIs, in most cases storage or DBs,
-	that are also remote. The typical approach to dealing with SLO
-	violations in this environment is to kill the container and
-	restart it someplace else. Can container migration help get
-	the best of both worlds: the simplicity of containers and the
-	migration flexibility of VMs? Is current migration technology
-	sufficient (CRIU)? Alternatively, can we build on something
-	like KVM to build a container system that supports safe
-	migratable processes, use a userspace networking stack running
-	in the same address space and provide basic filesystem
-	abstractions that target a remote storage system? The Intel
-	Clear Containers project may be a good starting point. </li>
+	   <li> Several companies will always need to be partially on-premise or will need to operate using >1 cloud operator. What do you need to change or optimize in cloud frameworks (orchestration, analytics, serving) to deal with multi-cloud case? E.g., how do you optimize around slow inter-cloud networks or reconcile the different security models? </li>
 	</li>
 	      
 	</ul>
-	    
-	<h3>Machine Learning</h3>
+    
+    <h3>Security and Privacy</h3>
 	<ul style="margin-left: 20px;">
-	<li>Fault tolerant and elastic deep learning: with constructs such as the spot market available in public clouds, the static network topologies in current distributed deep learning frameworks may not be optimal. How can we make these frameworks tolerate elasticity how much do we gain from it?</li>
-	<li>Attacking cloud ML APIs: several papers have shown that for systems that offer ML inference as a service (using a private model from the provider), it’s possible to recover the model after a few requests (e.g., suppose that it was k-dimensional a linear model — you just need k requests). Can you do this for deep learning models?</li>
+	   <li>Multi-party computation as a service.</li>
+       <li>Edge computation as a service: design a platform for running functions on the edge (IOT) while isolating them from each other the way a cloud does. </li>
+       <li>Privacy: Implement <a href="https://cs.stanford.edu/~matei/papers/2017/hotnets_diy.pdf">DIY applications</a> using serverless computing that users can use for a common computing task, such as chat or email. </li>
+       <li>Analytics and Privacy: Design a managed storage &amp; analytics stack that automatically respects data privacy regulations such as GDPR (e.g. keeping data for each country inside it). </li>
 	</ul>
-	    
-    	<h3>Security</h3>
-	<ul style="margin-left: 20px;">
-	<li>Can you design a programming model that automatically makes sure a cloud application follows an industry regulation such as HIPAA? Ideally this would look very close to existing programming models (e.g. Lambda or Node.JS) but do this automatically.</li>
-	</ul>
+
+    <h3>Storage</h3>
+    <ul style="margin-left: 20px;">
+        <li>Storage and Economics: Design a system that automatically compresses data or moves it to faster/slower tiers of storage to minimize cloud cost subject to meeting a certain workload SLA.</li>
+        <li>Storage and ML: Design an indexing system for visual data that allows efficient queries based on its representation under a neural network featurizer. For example, consider searching for video frames that are likely to contain a bicycle using the neural network’s representation.</li>
+    </ul>
 	    
       </div>
     </div>
