@@ -2,8 +2,46 @@
 # automatically overridden nightly.  To grant access to additional users,
 # add them to .htstaff instead.
 
-AuthType WebAuth
-AuthGroupFile /afs/.ir/class/archive/cs/cs349d/cs349d.1192/WWW/restricted//.htstaff
-AuthzGroupFileAuthoritative Off
-require group 1192-cs-349d-staff
+# Apache 2.2
+
+<IfModule !mod_authz_core.c>
+  AuthType WebAuth
+  AuthGroupFile /afs/.ir/class/archive/cs/cs349d/cs349d.1192/WWW/restricted//.htstaff
+  AuthzGroupFileAuthoritative Off
+  require group 1192-cs-349d-staff
+
+  require user ankit96
+  require user apunj
+  require user deeptir
+  require user jcamach2
+  require user lizhikev
+  require user myzhao
+  require user nmovva
+  require user psprads
+  require user samir2
+  require user schen751
+</IfModule>
+
+# Apache 2.4
+
+<IfModule mod_authz_core.c>
+  AuthType WebAuth
+  AuthGroupFile /afs/.ir/class/archive/cs/cs349d/cs349d.1192/WWW/restricted//.htstaff
+  <RequireAll>
+  <RequireAny>
+  require group 1192-cs-349d-staff
+
+  require user ankit96
+  require user apunj
+  require user deeptir
+  require user jcamach2
+  require user lizhikev
+  require user myzhao
+  require user nmovva
+  require user psprads
+  require user samir2
+  require user schen751
+  </RequireAny>
+  </RequireAll>
+ </IfModule>
 
