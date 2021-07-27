@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>
+      CS349D Project Ideas 
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="../site_files/basic-profile.css" media="all">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="content">
+        <h1 id="cs349d-cloud-computing-technology">CS349D Project Ideas</h1>
+
+
+    <p>The following is a list of potential topics and ideas for your
+    CS349d project. These are starting points that will require
+    further development. Please reach out to the instructors for futher
+    information.</p> 
+
+    <h3>Machine Learning</h3>
+    <ul style="margin-left: 20px;">
+        <li>Design an infrastructure for mobile-edge neural network computations. Offload to edge servers or datacenter servers as needed for performance/power or based on data availability. </li>
+        <li>In a cloud ML system as new data arrive, how do we decide when to re-train or incrementally train a ML model? How does the cost vs. benefit relate to the model type? What infrastructure is needed to support this?</li>
+        <li>ML Serving: Design a system to automatically generate fast model serving code from a data science pipeline in libraries like Pandas and SciKit-Learn, using technology such as <a href="https://www.weld.rs/">Weld</a>.</li>
+        <li>ML and Hardware: build a parameter server for distributed ML training that exploits 3D crosspoint memory to increase capacity without introducing performance problems. </li>
+    </ul>
+
+    <h3>Serverless Computing</h3>
+	<ul style="margin-left: 20px;">
+	  <li>Serveless for high throughput serving systems: Serverless computing is quite popular with low volume serving applications. For high volume serving application (e.g., websearch), people still use traditional server designs. Can we design a serverless system that can execute efficiently the same code both at low and high volume scenarios? </li>
+	  <li>Serverless for accelerators: Does it make sense to extend the serverless platforms for FPGAs, and other accelerators? If yes, how does the system look like? </li>
+      <li>Build a serverless platform based on slack compute, memory, and storage resources.</li>
+	  <li>The economics of serverless: How should one charge for 
+          serverless? Alternatively, given the economics and the usage
+          characteristics, how should one set the thresholds for constraints
+	  (e.g., up to 500 MB disk)? </li>
+	</ul>
+
+	<h3>Cloud Management</h3>
+
+	<ul style="margin-left: 20px;">
+
+	   <li> ML for cloud management: Several researchers are suggesting the use of reinforcement learning (RL) in cloud management. Select on cloud management task (e.g., resource allocation, scheduling, etc) and build RL solutions to it. </li>
+
+	   <li> Several companies will always need to be partially on-premise or will need to operate using >1 cloud operator. What do you need to change or optimize in cloud frameworks (orchestration, analytics, serving) to deal with multi-cloud case? E.g., how do you optimize around slow inter-cloud networks or reconcile the different security models? </li>
+	</li>
+	      
+	</ul>
+    
+    <h3>Security and Privacy</h3>
+	<ul style="margin-left: 20px;">
+	   <li>Multi-party computation as a service.</li>
+       <li>Edge computation as a service: design a platform for running functions on the edge (IOT) while isolating them from each other the way a cloud does. </li>
+       <li>Privacy: Implement <a href="https://cs.stanford.edu/~matei/papers/2017/hotnets_diy.pdf">DIY applications</a> using serverless computing that users can use for a common computing task, such as chat or email. </li>
+       <li>Analytics and Privacy: Design a managed storage &amp; analytics stack that automatically respects data privacy regulations such as GDPR (e.g. keeping data for each country inside it). </li>
+	</ul>
+
+    <h3>Storage</h3>
+    <ul style="margin-left: 20px;">
+        <li>Storage and Economics: Design a system that automatically compresses data or moves it to faster/slower tiers of storage to minimize cloud cost subject to meeting a certain workload SLA.</li>
+        <li>Storage and ML: Design an indexing system for visual data that allows efficient queries based on its representation under a neural network featurizer. For example, consider searching for video frames that are likely to contain a bicycle using the neural network’s representation.</li>
+    </ul>
+	    
+      </div>
+    </div>
+
+</body></html>
